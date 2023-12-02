@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 
 const textVariants = {
   initial: {
@@ -39,50 +40,56 @@ const sliderVariants = {
 export const Hero = () => {
   return (
     <div className="h-[calc(100vh-96px)] overflow-hidden relative">
-      <article className="max-w-6xl h-full m-auto">
+      <motion.article
+        variants={textVariants}
+        initial="initial"
+        animate="animate"
+        className="container max-w-7xl mx-auto h-full xl:h-3/4 flex flex-col gap-4 md:gap-8 items-center justify-center text-center"
+      >
+        <motion.h2
+          variants={textVariants}
+          className="text-2xl md:text-4xl text-purple-shade spacing tracking-widest uppercase"
+        >
+          Ikram Ul Haq
+        </motion.h2>
+        <motion.h1
+          variants={textVariants}
+          className="text-4xl md:text-6xl 2xl:text-8xl capitalize"
+        >
+          Full Stack Developer
+        </motion.h1>
         <motion.div
           variants={textVariants}
-          initial="initial"
-          animate="animate"
-          className="w-full md:w-1/2 h-1/2 md:h-full flex flex-col gap-5 md:gap-10 items-center md:items-start justify-center text-center md:text-start"
+          className="flex flex-col md:flex-row gap-4 z-10"
         >
-          <motion.h2
-            variants={textVariants}
-            className="text-2xl text-purple-shade spacing tracking-widest uppercase"
-          >
-            Ikram Ul Haq
-          </motion.h2>
-          <motion.h1
-            variants={textVariants}
-            className="text-4xl md:text-6xl 2xl:text-8xl capitalize"
-          >
-            Full Stack Developer
-          </motion.h1>
-          <motion.div variants={textVariants} className="flex gap-4">
+          <Link href={"#portfolio"}>
             <motion.button
+              type="button"
               variants={textVariants}
-              className="p-4 border border-white rounded-lg bg-transparent text-white font-light"
+              className="p-2 md:p-4 border border-white rounded-lg bg-transparent text-white font-light text-base cursor-pointer"
             >
               See the Latest Works
             </motion.button>
+          </Link>
+          <Link href={"#contact"}>
             <motion.button
               variants={textVariants}
-              className="p-4 border border-white rounded-lg bg-white text-black font-light"
+              className="p-2 md:p-4 border border-white rounded-lg bg-white text-black font-light text-base"
             >
               Contact Me
             </motion.button>
-          </motion.div>
-          <motion.img
-            src="/assets/scroll.png"
-            alt="scroll"
-            variants={textVariants}
-            animate="scrollButton"
-            width={48}
-            height={48}
-            className="w-12 h-12"
-          />
+          </Link>
         </motion.div>
-      </article>
+        <motion.img
+          src="/assets/scroll.png"
+          alt="scroll"
+          variants={textVariants}
+          animate="scrollButton"
+          width={48}
+          height={48}
+          className="w-12 h-12"
+        />
+      </motion.article>
       <motion.div
         variants={sliderVariants}
         initial="initial"
@@ -91,7 +98,7 @@ export const Hero = () => {
       >
         Programmer, Developer, Problem Solver
       </motion.div>
-      <figure className="h-1/2 md:h-full w-full md:w-auto absolute top-auto md:top-0 bottom-0 md:bottom-auto right-0">
+      {/* <figure className="h-1/2 md:h-full w-full md:w-auto absolute top-auto md:top-0 bottom-0 md:bottom-auto right-0">
         <Image
           src="/assets/hero.png"
           alt="ikramdeveloper"
@@ -99,7 +106,7 @@ export const Hero = () => {
           height={100}
           className="w-full h-full object-cover"
         />
-      </figure>
+      </figure> */}
     </div>
   );
 };

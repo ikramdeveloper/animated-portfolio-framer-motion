@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Links } from "./Links";
 import { ToggleButton } from "./ToggleButton";
+import { cn } from "@/utils";
 
 const variants = {
   open: {
@@ -23,22 +24,29 @@ const variants = {
 };
 
 export const Sidebar = () => {
-  const [openSidebar, setOpenSidebar] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [isSidebarOpened, setIsSidebarOpened] = useState(false);
 
   const handleToggle = () => {
-    setOpenSidebar(pre => !pre);
+    setIsSidebarOpened(pre => !pre);
   };
+
+  useEffect(() => {
+    setIsLoaded(true);
+  }, []);
 
   return (
     <motion.div
-      animate={openSidebar ? "open" : "closed"}
+      animate={isSidebarOpened ? "open" : "closed"}
       className="flex flex-col items-center justify-center bg-white text-black"
     >
       <motion.div
         variants={variants}
-        className="z-40 fixed inset-0 bg-white w-48 md:w-96"
+        className={cn("z-40 inset-0 bg-white w-48 md:w-96", {
+          fixed: isLoaded,
+        })}
       >
-        <Links />
+        <Links isOpened={isSidebarOpened} />
       </motion.div>
       <ToggleButton handleToggle={handleToggle} />
     </motion.div>

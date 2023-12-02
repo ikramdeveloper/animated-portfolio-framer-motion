@@ -12,7 +12,6 @@ export default {
         "past-work-gradient": "linear-gradient(180deg, #111132, #0c0c1d)",
         "portfolio-gradient": "linear-gradient(180deg, #111132, #505064)",
         "hero-gradient": "linear-gradient(180deg, #0c0c1d, #111132)",
-        "services-gradient": "linear-gradient(180deg, #0c0c1d, #111132)",
         "mountains-image": "url('/assets/mountains.png')",
         "planets-image": "url('/assets/planets.png')",
         "sun-image": "url('/assets/sun.png')",

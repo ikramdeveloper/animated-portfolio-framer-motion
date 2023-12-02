@@ -1,6 +1,6 @@
-import { linksList } from "@/data";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { linksList } from "@/data";
 
 const variants = {
   open: {
@@ -27,17 +27,23 @@ const linkVariants = {
   },
 };
 
-export const Links = () => {
+interface LinksProps {
+  isOpened: boolean;
+}
+
+export const Links = ({ isOpened }: LinksProps) => {
   return (
     <motion.div
       variants={variants}
-      className="absolute w-full h-full flex flex-col items-center justify-center gap-5"
+      className={
+        "absolute w-full h-full flex flex-col items-center justify-center gap-5"
+      }
     >
       {linksList.map(item => (
         <Link
           key={item.value}
           href={`#${item.value}`}
-          className="text-xl md:text-4xl"
+          className="text-xl md:text-4xl hover:scale-110 hover:transition-transform"
         >
           <motion.span
             variants={linkVariants}

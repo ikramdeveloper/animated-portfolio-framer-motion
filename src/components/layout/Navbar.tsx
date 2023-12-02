@@ -1,12 +1,14 @@
 import { motion } from "framer-motion";
 import { Sidebar } from "../layout/sidebar";
 import Image from "next/image";
+import { FacebookIcon, GithubIcon, LinkedinIcon } from "@/assets";
+import Link from "next/link";
 
 export const Navbar = () => {
   return (
     <nav className="h-24">
       <Sidebar />
-      <article className="max-w-6xl m-auto flex items-center justify-end md:justify-between h-full p-4 md:p-0">
+      <article className="max-w-7xl ml-16 flex items-center justify-between h-full p-4">
         <motion.span
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -16,42 +18,15 @@ export const Navbar = () => {
           Ikram Developer
         </motion.span>
         <div className="flex gap-4">
-          <a href="#">
-            <Image
-              src="/assets/facebook.png"
-              alt="facebook/ikramdeveloper"
-              width={20}
-              height={20}
-              className="w-5 h-5"
-            />
-          </a>
-          <a href="#">
-            <Image
-              src="/assets/instagram.png"
-              alt="instagram/ikramdeveloper"
-              width={20}
-              height={20}
-              className="w-5 h-5"
-            />
-          </a>
-          <a href="#">
-            <Image
-              src="/assets/youtube.png"
-              alt=""
-              width={20}
-              height={20}
-              className="w-5 h-5"
-            />
-          </a>
-          <a href="#">
-            <Image
-              src="/assets/dribble.png"
-              alt=""
-              width={20}
-              height={20}
-              className="w-5 h-5"
-            />
-          </a>
+          <Link href="#" target="_blank">
+            <GithubIcon className="w-6 h-6 text-white" />
+          </Link>
+          <Link href="#" target="_blank">
+            <LinkedinIcon className="w-6 h-6 text-white" />
+          </Link>
+          <Link href="#" target="_blank">
+            <FacebookIcon className="w-6 h-6 text-white" />
+          </Link>
         </div>
       </article>
     </nav>

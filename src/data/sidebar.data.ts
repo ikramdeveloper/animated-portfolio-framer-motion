@@ -12,10 +12,6 @@ export const linksList = [
     value: "portfolio",
   },
   {
-    label: "About",
-    value: "about",
-  },
-  {
     label: "Contact",
     value: "contact",
   },
