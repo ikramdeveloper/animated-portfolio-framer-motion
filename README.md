@@ -30,7 +30,10 @@ Elevate your online presence with the power of motion! 🚀 Unleash the potentia
 This project makes use of the following technologies:
 
 - **Next.js**: A React framework for building web applications.
-- **[Any other technologies or libraries used in your project]**
+- **Typescript**: Superset of JavaScript to enhance readability.
+- **Framer Motion**: Popular animation library for React applications.
+- **Tailwind CSS**: Utility-first CSS framework.
+- **EmailJS**: A JavaScript package for sending emails from web
 
 ## Husky Setup
 
@@ -60,10 +63,6 @@ npm run pre-commit
 ## Contributing:
 
 Contributions are welcome! Feel free to open issues or submit pull requests to improve the project.
-
-## Todo:
-
-- [Add your project-specific todos or goals here]
 
 ## License:
 
