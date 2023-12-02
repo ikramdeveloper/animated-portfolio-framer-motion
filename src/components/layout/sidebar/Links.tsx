@@ -27,11 +27,7 @@ const linkVariants = {
   },
 };
 
-interface LinksProps {
-  isOpened: boolean;
-}
-
-export const Links = ({ isOpened }: LinksProps) => {
+export const Links = () => {
   return (
     <motion.div
       variants={variants}

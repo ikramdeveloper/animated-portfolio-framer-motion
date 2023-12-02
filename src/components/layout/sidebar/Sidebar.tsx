@@ -46,7 +46,7 @@ export const Sidebar = () => {
           fixed: isLoaded,
         })}
       >
-        <Links isOpened={isSidebarOpened} />
+        <Links />
       </motion.div>
       <ToggleButton handleToggle={handleToggle} />
     </motion.div>

@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { Sidebar } from "../layout/sidebar";
-import Image from "next/image";
 import { FacebookIcon, GithubIcon, LinkedinIcon } from "@/assets";
 import Link from "next/link";
 
